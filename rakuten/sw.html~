@@ -1,0 +1,25 @@
+<html>
+<head>
+<head>
+	<body>
+		<script type="text/javascript">
+			<!--
+			rakuten_easy_flag123456789 = 1;
+			function test(){
+				var info = document.all.rakuten_easy;
+				if(info.innerHTML == "ON"){
+					rakuten_easy_flag123456789 = 0;
+					info.innerHTML = "OFF";
+					info.style.color="red";
+				}else{
+					rakuten_easy_flag123456789 = 1;
+					info.innerHTML = "ON";
+					info.style.color="blue";
+				}
+				}
+			-->
+		</script>
+		STATUS<div id="rakuten_easy" onClick="test()" style="color:blue">
+			ON</div>
+	</body>
+</html>

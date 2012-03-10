@@ -1,0 +1,55 @@
+ jQuery.noConflict();
+jQuery(document).ready(function(){
+//main parts
+	var flag_of_= jQuery(".susumeruArea")
+			.parent()
+			.parent()
+			.parent()
+			.parent()
+			.parent()
+			.parent()
+			.parent()
+			.parent()
+	if(flag_of_.size() != 0 && flag_of_ != null){
+//make new div for function"back to originalpage"
+		var i;
+		for(i=0;i<flag_of_.size(); i +=1){
+			flag_of_.eq(i)
+			.after(jQuery("<div class='simple_rakuten_tag123456789" + i + "'>"));
+		}
+//make new div for wrap item tag		
+		jQuery("body").prepend("<div id ='wrap_all_item123456789'>");
+
+		flag_of_
+		.css("margin","20px 0 0 20px")
+		.prependTo(jQuery("body #wrap_all_item123456789"));
+
+		jQuery("body >  :gt(5)").hide();
+		jQuery("body").children().eq(5)
+		.prependTo(jQuery("body"));
+		jQuery("body").children().eq(3)
+		.css("margin","20px 0 0 0")
+		.prependTo(jQuery("body"));
+	
+
+		jQuery("body").prepend(
+			 jQuery("<a class='for_original_page_display12345789'>")
+			.html("back to original page")
+			.css("text-size","20px")
+			.css("font-size","15px")
+			.css("margin","20px 0 0 20px")
+			.css("color","blue")
+			.click(function(){
+				var i;
+				for(i=0;i<flag_of_.size(); i +=1){
+					jQuery(".simple_rakuten_tag123456789"+i)
+					.before(flag_of_.eq(i));
+				}
+				jQuery("body > *").css("display","");
+				
+				jQuery(".for_original_page_display12345789").hide();
+			})
+		);
+	}
+
+});

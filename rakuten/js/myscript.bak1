@@ -1,0 +1,17 @@
+ jQuery.noConflict();
+
+jQuery(document).ready(function(){
+	 // to dispose first view
+	jQuery("body >  :gt(4)").hide(1,
+		function(){	
+		jQuery("img[src*='_ex=300x300']")
+			.parent()
+			.parent()
+			.parent()
+			.parent()
+			.parent()
+			.prependTo(jQuery("body"));
+		}
+	);
+
+});

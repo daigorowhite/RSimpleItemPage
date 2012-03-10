@@ -1,0 +1,25 @@
+{
+  "name": "Rakuten Optimistic",
+  "version": "1.0",
+  "description": "This Extension can make rakuten UI to be easy to watch",
+
+  "permissions": [
+    "tabs","http://item.rakuten.cp.jp/*"
+  ],
+
+  "browser_action":{
+    "default_icon":"icon.png",
+    "popup":"sw.html",
+    "js":["js/jquery-1.6.2.js","js/change.js"]
+  },
+
+  "content_scripts":[
+  {
+  "matches": ["http://item.rakuten.co.jp/*"],
+  "css": ["css/mystyles.css", "css/jquery-ui-1.8.16.custom.css"],
+  "js": ["js/jquery-1.6.2.js","js/myscript.js","js/jquery-ui-1.8.16.custom.min.js"],
+  "run_at": "document_start"
+  }
+  ]
+
+}
