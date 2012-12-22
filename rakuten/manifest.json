@@ -1,7 +1,8 @@
 {
   "name": "Rakuten Optimistic",
   "version": "1.0",
-  "description": "This Extension can make rakuten UI to be easy to watch",
+  "manifest_version": 2,
+  "description": "This Extension can make Rakuten item page to be easy to watch",
 
   "permissions": [
     "tabs","http://item.rakuten.cp.jp/*"
