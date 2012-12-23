@@ -17,8 +17,10 @@
   "content_scripts":[
   {
   "matches": ["http://item.rakuten.co.jp/*"],
-  "css": ["css/mystyles.css", "css/jquery-ui-1.8.16.custom.css"],
-  "js": ["js/jquery-1.6.2.js","js/myscript.js","js/jquery-ui-1.8.16.custom.min.js"],
+  // "css": ["css/mystyles.css", "css/jquery-ui-1.8.16.custom.css"],
+  // "js": ["js/jquery-1.6.2.js","js/myscript.js","js/jquery-ui-1.8.16.custom.min.js"],
+  "css": ["css/mystyles.css", "css/jquery-ui-1.9.2.custom.css"],
+  "js": ["js/jquery-1.8.3.js","js/jquery-ui-1.9.2.custom.js","js/myscript.js"],
   "run_at": "document_start"
   }
   ]
