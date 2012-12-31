@@ -1,3 +1,16 @@
-body {
-	bg-color:red;
+
+#change_botton{
+	text-size : 20px;
+	font-size : 15px;
+	margin : 5px 0 0 5px;
+	color : white;
+	background-color : blue;
+	position : fixed;
+	border : 10px outset blue;
+	font-weight : bold;
+	z-index : 9001;
+}
+
+#wrap_all_item123456789{
+	padding : 50px 0 0 0 ;
 }
