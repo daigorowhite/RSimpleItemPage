@@ -8,9 +8,13 @@
 	position : fixed;
 	border : 10px outset blue;
 	font-weight : bold;
+	opacity: 0.95;
+	/*font-family: 'Trebuchet MS', Tahoma, Verdana, Arial, sans-serif;*/
 	z-index : 9001;
 }
 
 #wrap_all_item123456789{
 	padding : 50px 0 0 0 ;
+	background-color: #ffffff;
+	border: 3px solid #F6A828
 }

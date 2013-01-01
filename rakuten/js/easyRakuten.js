@@ -120,10 +120,11 @@ jQuery(document).ready(function(){
 
 	function make_to_simple_link(){
 		jQuery("body").prepend(
-			 jQuery("<a class='" + simple_page_bottom + "' id='change_botton'>")
+			 jQuery("<a class='" + simple_page_bottom + "' id='change_botton' href='#'>")
 			.html("SIMPLE PAGE")
 			.click(function(){
 				to_go_simple();
+				return false;
 			})
 		);
 	}
@@ -155,10 +156,11 @@ jQuery(document).ready(function(){
 
 	function make_back_link(){
 		jQuery("body").prepend(
-			 jQuery("<a class='" + original_page_bottom + "' id='change_botton'>")
+			 jQuery("<a class='" + original_page_bottom + "' id='change_botton' href='#'>")
 			.html("ORIGINAL PAGE")
 			.click(function(){
 				to_back_original();
+				return false;
 			})
 		);
 	}
