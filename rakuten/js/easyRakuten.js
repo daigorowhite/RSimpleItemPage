@@ -8,6 +8,8 @@ jQuery(document).ready(function(){
 	var wrap_all_item='wrap_all_item123456789'
 	var inited=false;
 	var taged=false;
+	var SIMPLE_MODE='simple';
+	var ORIGINAL_MODE='original';
 
 	//main Item parts
 	var flag_of_= jQuery(".susumeruArea")
@@ -23,12 +25,22 @@ jQuery(document).ready(function(){
 	// number of item on the page
 	var item_num=flag_of_.size();
 
+	//check item number
 	if (item_num != 0 && flag_of_ != null) {
 		main();
 	}
 
 	function main(){
-		//check item number
+      chrome.storage.local.get('default_mode',function(items){
+      var mode_ = items['default_mode'];
+        if (!mode_) {
+          mode_=SIMPLE_MODE;
+        }
+		do_simple(mode_);
+      });
+	}
+
+	function do_simple(mode_){
 		if(!inited ){
 		//make new div for function"back to originalpage"
 			for(i=0;i<flag_of_.size(); i +=1){
@@ -38,11 +50,6 @@ jQuery(document).ready(function(){
 			//make new div for wrap item tab		
 			jQuery("body").prepend("<div id ='" + wrap_all_item + "'>");
 
-			//hide any parts that is not needed
-			to_go_simple();
-
-			inited=true;
-
 
 			//make link to simple page
 			make_to_simple_link();
@@ -50,8 +57,22 @@ jQuery(document).ready(function(){
 			//make link to back original page
 			make_back_link();
 
-			// hide to simple link
-			jQuery("."+ simple_page_bottom ).hide();
+			if(mode_ == SIMPLE_MODE){
+				//hide any parts that is not needed
+				to_go_simple();
+
+				// hide to simple link
+				jQuery("."+ simple_page_bottom).hide();
+
+				// scroll to top
+			}else{
+				jQuery("."+ original_page_bottom ).hide();
+			}
+
+			window.scroll(0,0);
+			inited=true;
+
+
 		}
 	}
 
@@ -95,10 +116,6 @@ jQuery(document).ready(function(){
 			flag_of_.eq(i)
 			.appendTo(jQuery("#ui-tabs-"+(i+1)));
 		}
-	}
-
-	function do_tab(){
-
 	}
 
 	function make_to_simple_link(){
